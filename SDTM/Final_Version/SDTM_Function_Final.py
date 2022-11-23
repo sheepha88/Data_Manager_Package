@@ -6,7 +6,7 @@ import openpyxl
 warnings.filterwarnings("ignore")
 
 
-#오류 메세지
+# 오류 메세지
 class printerror(Exception):
     def __init__(self, msg) :
           self.msg = msg
@@ -22,8 +22,8 @@ class USUBJIDerror(printerror):
         self.msg = ("\"{}\" do not exist in USUBJID of dataframe ".format(USUBJID ))
 
 
-class ADJ_PICKerror(printerror):
-    def __init__(self,USUBJID ) :
+class ADJ_PICKerror(printerror): 
+    def __init__(self,USUBJID ) : 
         self.msg = ( "Subject ID : \"{}\" 조정자값이 두 평가자 값과 달라 확인요망".format(USUBJID))
 
 
@@ -32,8 +32,8 @@ class SDTM:
     def __init__(self) :
           pass
 
-###조정자 pick 오류 검토 함수
-#ADJ_PICK(df , "01S306" , "Baseline (1st scan)" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" ,"TUACPTFL" ,  ["TRGOC_1","TRGOCOT_1","TRGLD_1"])
+### 조정자 pick 오류 검토 함수
+# ADJ_PICK(df , "01S306" , "Baseline (1st scan)" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" ,"TUACPTFL" ,  ["TRGOC_1","TRGOCOT_1","TRGLD_1"])
 # 1. raw_dataframe에서 해당 대상자의 baseline에서 columns를 기준으로 ADJ와 Analyst를 비교하여 ADJ가 누굴 택했는지 확인(인자 = ADJ_Pick_Analayst)
 # 2. ADJ 와 선택된 Analyst들만 있는 테이블을 뽑아내고 , 조정자 행과 선택된 Analyst행의 columns값들을 비교하여 하나라도 틀린 행이 있으면 출력
 

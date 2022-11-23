@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 
 # Modality와 Scan Type에 따라 Date가 잘 입력 되었는가     2022.10.25
 # -> SCAN TYPE의 Date가 잘못 기재된 경우
-# ex) CT SCAN , chest 이면 영상촬영일자의 CT-Chest Date와 동일해야 한다.
+# ex) CT SCAN , Chest 이면 Form 상단의 영상촬영일자의 CT-Chest Date와 동일해야 한다.
 def ScanDataCheck(dataframe):
     result_dataframe = pd.dataframe(coloums=dataframe.columns)
     result_dataframe['DM_CMT']=np.nan
@@ -51,8 +51,8 @@ def ScanDataCheck(dataframe):
 # Status가 Present이면 반드시 Non-CR/Non-PD 여아한다.     2022-10-25
 # Non target 에서 present인데 Non CR Non PD가 아닌 경우를 검토하는 함수  
 # Status가 Present이면 반드시 Non-CR/Non-PD 여아한다. // col_status를 각각 순회하여 Present인데 Non CR Non PD인지 검토 
-# ex) NonTargetResponse(df_NTL , "Non-CR/Non-PD" , "NTRGRESP" , "Present" , col_status=["TUMSTATE_NT_1" ,"TUMSTATE_NT_2" ,"TUMSTATE_NT_3" , "TUMSTATE_NT_4" , "TUMSTATE_NT_5"])
-def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status ):
+# ex) NonTargetResponse(df_NTL , "Non-CR/Non-PD" , "NTRGRESP" , "Present" , col_status=["TUMSTATE_NT_1" ,"TUMSTATE_NT_2" ,"TUMSTATE_NT_3" , "TUMSTATE_NT_4" , "TUMSTATE_NT_5"] , "Unequivocal progression" )
+def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status , Lesion_status ):
 
     df_frame = pd.DataFrame(columns = dataframe.columns)
     df_frame["DM_CMT"] = np.nan
@@ -62,28 +62,28 @@ def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetRespo
 
         option1 = Status_response in list(dataframe.loc[i,col_status])
         option2 = dataframe.loc[i , NonTargetResponse_col]!=NonTargetResponse
-        option3 = not "Unequivocal progression" in list(dataframe.loc[i,col_status])     # Unequivocal progression 철자 확인하기 ( 과제마다 다르다. )
+        option3 = not Lesion_status in list(dataframe.loc[i,col_status])   # "Unequivocal progression" 입력시 철자확인 할 것  
 
         if option1 and option2 and option3:
             
             df_empty = dataframe.loc[i ,:]
             df_empty["DM_CMT"] = "Lesion Status가 {} 인데 , Response가 {}가 아닌 경우".format(Status_response , NonTargetResponse)
 
-            #행을 추가하면서 df_NTL_NTRGRESP_incorrect 에 저장
+            # 행을 추가하면서 df_NTL_NTRGRESP_incorrect 에 저장
             df_frame = df_frame.append(df_empty)
 
     return df_frame
 
-#Non Target Response PD 검토 함수
+# Non Target Response PD 검토 함수
 # Status 중에서 하나라도 Unequivocal Progression 이면 출력
 # ex) NonTargetResponse(df_NTL , "PD" , "NTRGRESP" , "Unequivocal Progression" , col_status=["TULSTAT_1" ,"TULSTAT_2" ,"TULSTAT_3" , "TULSTAT_4" , "TULSTAT_5"])
 def NonTargetResponse_PD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status  ):
 
-    #dataframe: NTL
-    #NonTargetResponse : PD , PR , ...
-    #NonTargetResponse_col : NRGRESP
-    #Status_response : Absent , Present,..
-    #col_status : TUMSTATE_NT_1 , ....
+    # dataframe: NTL
+    # NonTargetResponse : PD , PR , ...
+    # NonTargetResponse_col : NRGRESP
+    # Status_response : Absent , Present,..
+    # col_status : TUMSTATE_NT_1 , ....
     
     df_frame = pd.DataFrame(columns = dataframe.columns)
     df_frame["DM_CMT"] = np.nan
@@ -193,10 +193,8 @@ def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analy
     return result 
     
     
+    
         
-
-
-
 #map develop 함수 -> dictionary에 없는 값은 원래의 값을 출력
 # ex) map_dict(df , "LAGRADE",LAGRADE_dict ).unique()
 def map_dict(dataframe, col , dict_name):
@@ -848,7 +846,7 @@ def ScanDataCheck(dataframe):
 # ex) PD는 가장 최근 날짜 그외 나머지는 가장 과거 날짜가 제대로 기재되어있는지 검증하는 코드 
 
 def checkData(dataframe):
-    targetLesion = ['TUDTC_T_1','TUDTC_T_2','TUDTC_T_3','TUDTC_T_4','TUDTC_T_5'] # TRGRESP_RS /RSDTC_T      해당 컬럼 값은 Gen001-101 기준 
+    targetLesion = ['TUDTC_T_1','TUDTC_T_2','TUDTC_T_3','TUDTC_T_4','TUDTC_T_5'] # TRGRESP_RS /RSDTC_T         해당 컬럼 값은 Gen001-101 기준 
     nonTargetLesion = ['TUDTC_NT_1','TUDTC_NT_2','TUDTC_NT_3','TUDTC_NT_4','TUDTC_NT_5'] # NTRGRESP_RS / RSDTC_NT
     newLesion = ['TUIMNO_NEW_1','TUIMNO_NEW_2','TUIMNO_NEW_3','TUIMNO_NEW_4','TUIMNO_NEW_5'] # OVRLRESP_RS / RSDTC_RS
     
@@ -858,7 +856,7 @@ def checkData(dataframe):
     for i in range(len(dataframe)):
         # PD 가장 과거 / 나머지는 최근 날짜
         targetDate = [dataframe.loc[i,x] for x in targetLesion if dataframe.loc[i,x]!=None]
-        #===== ↑1 코드는 ↓1 코드의 4줄과 같다.
+        # ===== ↑1 코드는 ↓4줄의 코드와 같다.
         # targetDate=[]
         # for x in targetLesion:
         #   if dataframe.loc[i,x]!=None:

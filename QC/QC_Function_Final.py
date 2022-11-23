@@ -12,7 +12,7 @@ def columns_QC(columns1 , columns2):
             
             
 ## value값 비교
-#dataframe1.equals(dataframe2)
+# dataframe1.equals(dataframe2)
 
 def values_QC(dataframe1 , dataframe2):
     for i in range(len(dataframe1)):

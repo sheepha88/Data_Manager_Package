@@ -103,7 +103,7 @@ class SDTM_TU:
         self.columns_list = ["USUBJID" , "VISIT" , "TUEVALID" , "TULOC" , "TULAT" , "TUMETHOD" , "TUDTC", "TUDIR" , "TUPORTOT" , "TUACPTFL"]
         self.df_empty = pd.DataFrame(columns=self.columns_list)
         
-        #visit number mapping
+        #visit number mapping , 매개변수로 넣어야 될듯
         self.visit_number = {"Screening" : 0 , "W8": 1, "W16": 2, "W24": 3}
 
         #READER
@@ -224,3 +224,5 @@ class SDTM_TU:
         self.df_empty["TUEVAL"] = "INDEPENDENT ASSESSOR"
 
         return self.df_empty
+
+        

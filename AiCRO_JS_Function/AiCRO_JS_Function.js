@@ -3,7 +3,7 @@
 
 
 
-// 입력 날짜가 YYYY-MM-DD 형식이 아니면 메세지 출력  2022-10-25
+// 입력 날짜가 YYYY-MM-DD 형식이 아니면 메세지 출력  2022-10-25  
 // Date기능을 사용할 OID값 마다 각각 따로 사용하여야 한다.  즉, DTF 내 Date 기능이 3개라면 OID값을 변경하여 3번 사용 
 var message =""; 
 var trueFalse = false;
@@ -29,7 +29,6 @@ if((ITEM.getValue("DTF_SCANDTC_CT") === null) && megic.isNull(ITEM.getValue("DTF
     // 조건 만족시 경고메세지 삭제
     ITEM.alarm("prompt",trueFalse,message,mandatory,"DTF_SCANDTC_CT");
 }
-
 
 
 

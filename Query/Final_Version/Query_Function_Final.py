@@ -157,6 +157,13 @@ def NonTargetResponse_CR(dataframe , NonTargetResponse , NonTargetResponse_col ,
 # 1. raw_dataframe에서 해당 대상자의 baseline에서 columns를 기준으로 ADJ와 Analyst를 비교하여 ADJ가 누굴 택했는지 확인(인자 = ADJ_Pick_Analayst)
 # 2. ADJ 와 선택된 Analyst들만 있는 테이블을 뽑아내고 , 조정자 행과 선택된 Analyst행의 columns값들을 비교하여 하나라도 틀린 행이 있으면 출력
 
+###함수이용방법 :반목문 통해서 빈데이터 프레임에 데이터프레임 함수값을 append하여 채워진 dataframe을 return한다
+# emt_dataframe = pd.DataFrame(columns=df.columns)
+# for i in list(df["USUBJID"].unique()):
+#     emt_dataframe = emt_dataframe.append(ADJ_PICK(df, i , "Screening" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" , ["TRIND","T_1","TUALOT_T_1","TULAT_T_1","TUDIR_T_1","TUPORT0T_T_1"]))
+
+# emt_dataframe
+
 def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analyst_2 , columns):
     
     #해당 대상자의 baseline만 뽑아낸 테이블

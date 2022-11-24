@@ -7,32 +7,32 @@ warnings.filterwarnings("ignore")
 
 
 
-# Modality와 Scan Type에 따라 Date가 잘 입력 되었는가     2022.10.25
+# Modality와 Scan Type에 따라 Date가 잘 입력 되었는가  ( Incorrect Check )    2022.10.25
 # -> SCAN TYPE의 Date가 잘못 기재된 경우
 # ex) CT SCAN , Chest 이면 Form 상단의 영상촬영일자의 CT-Chest Date와 동일해야 한다.
 def ScanDataCheck(dataframe):
-    result_dataframe = pd.dataframe(coloums=dataframe.columns)
+    result_dataframe = pd.DataFrame(columns=dataframe.columns)
     result_dataframe['DM_CMT']=np.nan
-    # TUMETHOD_NT_i : CT,MRI,Other  , TUIMG_NT_i : Chest,Abdomen/Pelvis,Other , TUDTC_NT_i , 
+    # TUMETHOD_NT_i : CT,MRI,Other  , TUIMG_NT_i : Chest, Abdomen/Pelvis, Other ,TUDTC_NT_i, 
     for i in range(len(dataframe)):
         for j in range(1,6):
-            modality = "TUMETHOD_NT_"+str(j)
+            modality = "TUMETHOD_NT_"+str(j)       # 각 매개변수를 달아 버릴까, 
             scan_type = "TUIMG_NT_"+str(j)
             scan_date = "TUDTC_NT_"+str(j)
-            if (dataframe.loc[i,modality]!=None and dataframe.loc[i,scan_type]!=None):
-                if dataframe.loc[i,scan_date] == None:
+            if pd.isnull(dataframe.loc[i,modality] and pd.isnull(dataframe.loc[i,scan_type])):
+                if pd.isnull(dataframe.loc[i,scan_date]):
                     new_line=dataframe.loc[i,:]
-                    new_line["DM_CMT"] = "날짜를 불러오지 못한 경우 Non-Target Lession{}번째".format(j)
+                    new_line["DM_CMT"] = "날짜를 불러오지 못한 경우 Non-Target Lesion{}번째".format(j)
                     result_dataframe.append(new_line)
                 else:
                     original_type = "TUDTC_"
-                    if not dataframe.loc[i,modality] in ["CT","MRI"]:
+                    if not dataframe.loc[i,modality] in ["CT SCAN","MRI"]:
                         original_type+="OT_OT"
                     else:
-                        if dataframe.loc[i,modality]=="CT_":
-                            original_type+="CT"
+                        if dataframe.loc[i,modality]=="CT SCAN":
+                            original_type+="CT_"
                         else:
-                            original_type+="MRI_"
+                            original_type+="MR_"
 
                         if dataframe.loc[i,scan_type]=="Chest":
                             original_type+="CHEST"
@@ -41,12 +41,13 @@ def ScanDataCheck(dataframe):
                         else:
                             original_type+="OT"
                     
-                    if dataframe.loc[i,original_type]==None:
+                    if pd.isnull(dataframe.loc[i,original_type]):
                         new_line=dataframe.loc[i,:]
-                        new_line["DM_CMT"] = "옵션을 잘못 선택해서 날짜 값이 없는 타입을 선택한 경우 Non-Target Lession {}번째".format(j)
+                        new_line["DM_CMT"] = "옵션을 잘못 선택해서 날짜 값이 없는 타입을 선택한 경우 Non-Target Lesion {}번째".format(j)
                         result_dataframe.append(new_line)
                 
-    return result_dataframe      
+    return result_dataframe         
+ 
 
 # Status가 Present이면 반드시 Non-CR/Non-PD 여아한다.     2022-10-25
 # Non target 에서 present인데 Non CR Non PD가 아닌 경우를 검토하는 함수  
@@ -153,7 +154,7 @@ def NonTargetResponse_CR(dataframe , NonTargetResponse , NonTargetResponse_col ,
     
 
 ###조정자 pick 오류 검토 함수
-#ADJ_PICK(df , "01S306" , "Baseline (1st scan)" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" , ["TRGOC_1","TRGOCOT_1","TRGLD_1"])
+# ADJ_PICK(df , "01S306" , "Baseline (1st scan)" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" , ["TRGOC_1","TRGOCOT_1","TRGLD_1"])
 # 1. raw_dataframe에서 해당 대상자의 baseline에서 columns를 기준으로 ADJ와 Analyst를 비교하여 ADJ가 누굴 택했는지 확인(인자 = ADJ_Pick_Analayst)
 # 2. ADJ 와 선택된 Analyst들만 있는 테이블을 뽑아내고 , 조정자 행과 선택된 Analyst행의 columns값들을 비교하여 하나라도 틀린 행이 있으면 출력
 
@@ -631,7 +632,7 @@ def otherna(range1, range2, dataframe,*args, **kwargs):
 
 
 
-#Other가 아닌데, 값이 있는 경우(TRGOC값이 Others가 아닌데, TRGOCOT 이 있는 경우)
+# Other가 아닌데, 값이 있는 경우(TRGOC값이 Others가 아닌데, TRGOCOT 이 있는 경우)
 # ex)nothervalue(1,6,df_TL , "TRGOC","TRGOCOT" , length = "NA")
 def nothervalue(range1, range2, dataframe,*args, **kwargs):
     
@@ -662,7 +663,7 @@ def nothervalue(range1, range2, dataframe,*args, **kwargs):
 
 
 
-#TRGRESP 판별 알고리즘
+# TRGRESP 판별 알고리즘
 # nadirper = nadir % 나타내는 컬럼
 # baselineper = baseline % 나타내는 컬럼
 def TargetResponse(dataframe , nadirper , baselineper):
@@ -785,7 +786,7 @@ def OverallResponse(dataframe ,TRGIND, TRGRESP , NTRGRESP , NEWLIND ):
 
 def OverallResponse_YN(dataframe , OverallResponsecol):
     
-    #판독자와 알고리즘 결과값이 다른 경우 표시       
+    # 판독자와 알고리즘 결과값이 다른 경우 표시       
     for i in list(range(len(dataframe))):
         if dataframe.loc[i, OverallResponsecol] != dataframe.loc[i, "OVRESP_YJW"]:
             dataframe.loc[i,"YN"] = "N"
@@ -803,57 +804,12 @@ def OverallResponse_YN(dataframe , OverallResponsecol):
 
 
 
-# Modality와 Scan Type에 따라 Date가 잘 입력 되었는가  ( Incorrect Check )         2022-10-23
-# ex) CT SCAN , chest 이면 영상촬영일자의 CT-Chest Date와 동일 및 데이터를 가져와야한다.
-
-
-def ScanDataCheck(dataframe):
-    result_dataframe = pd.dataframe(coloums=dataframe.columns)
-    result_dataframe['DM_CMT']=np.nan
-    # TUMETHOD_NT_i : CT,MRI,Other  , TUIMG_NT_i : Chest,Abdomen/Pelvis,Other , TUDTC_NT_i , 
-    for i in range(len(dataframe)):
-        for j in range(1,6):
-            modality = "TUMETHOD_NT_"+str(j)
-            scan_type = "TUIMG_NT_"+str(j)
-            scan_date = "TUDTC_NT_"+str(j)
-            if (dataframe.loc[i,modality]!=None and dataframe.loc[i,scan_type]!=None):
-                if dataframe.loc[i,scan_date] == None:
-                    new_line=dataframe.loc[i,:]
-                    new_line["DM_CMT"] = "Scan Type 날짜를 불러오지 못한 경우 Non-Target Lession {}번째".format(j)
-                    result_dataframe.append(new_line)
-                # 아래는 옵션을 잘못 선택하여 당연히 없는 경우
-                else:
-                    original_type = "TUDTC_"
-                    if not dataframe.loc[i,modality] in ["CT","MRI"]:
-                        original_type+="OT_OT"
-                    else:
-                        if dataframe.loc[i,modality]=="CT_":
-                            original_type+="CT"
-                        else:
-                            original_type+="MRI_"
-
-                        if dataframe.loc[i,scan_type]=="Chest":
-                            original_type+="CHEST"
-                        elif dataframe.loc[i,scan_type]=="Abdomen/Pelvis":
-                            original_type+="ABD"
-                        else:
-                            original_type+="OT"
-                    
-                    if dataframe.loc[i,original_type]==None:
-                        new_line=dataframe.loc[i,:]
-                        new_line["DM_CMT"] = "옵션을 잘못 선택해서 날짜 값이 없는 타입을 선택한 경우 Non-Target Lession {}번째".format(j)
-                        result_dataframe.append(new_line)
-                
-    return result_dataframe      
-
-
-
 
 # Date of Target , NonTarget , Date of image acquisition 가 Logic에 따라 입력이 잘 되었는가     2022-10-25
 # ex) PD는 가장 최근 날짜 그외 나머지는 가장 과거 날짜가 제대로 기재되어있는지 검증하는 코드 
 
 def checkData(dataframe):
-    targetLesion = ['TUDTC_T_1','TUDTC_T_2','TUDTC_T_3','TUDTC_T_4','TUDTC_T_5'] # TRGRESP_RS /RSDTC_T         해당 컬럼 값은 Gen001-101 기준 
+    targetLesion = ['TUDTC_T_1','TUDTC_T_2','TUDTC_T_3','TUDTC_T_4','TUDTC_T_5'] # TRGRESP_RS /RSDTC_T         해당 컬럼 값은 GEN001-101 기준 
     nonTargetLesion = ['TUDTC_NT_1','TUDTC_NT_2','TUDTC_NT_3','TUDTC_NT_4','TUDTC_NT_5'] # NTRGRESP_RS / RSDTC_NT
     newLesion = ['TUIMNO_NEW_1','TUIMNO_NEW_2','TUIMNO_NEW_3','TUIMNO_NEW_4','TUIMNO_NEW_5'] # OVRLRESP_RS / RSDTC_RS
     

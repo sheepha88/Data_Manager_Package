@@ -1,4 +1,3 @@
-
 // AiCRO 기준 Setting의 DVS에서 사용할 수 있으며, 적용하고자 할 때 OID값을 확인하여야 한다.
 
 
@@ -32,9 +31,9 @@ if((ITEM.getValue("DTF_SCANDTC_CT") === null) && megic.isNull(ITEM.getValue("DTF
 
 
 
-
 // Indicator NO -> All Change Null  2022-10-20
 // Lesion Indicator를 No로 클릭하면, No.1 ~ No.5 안의 밸류 값들이 일체히 null값으로 변경
+// 이전 일정의 Indicator 값을 가져오는 기능과 중복될 수 있어 사실상, New Lesion에만 활용될 것으로 사료됩니다.
 if(ITEM.getValue("R_NEWLIND")!=="Yes") {    // Lesion Indicator의 OID값 확인하기
     let resetList=["R_NEWLOC_","R_NEWLOCOT_","R_NEWLOCSITE_","R_NEWLOCSITE_MUL_","R_NEWLDL_SE","R_NEWLDL_IM","R_NEWLMET_","R_NEWLMETOT_","R_NLIMG_","R_NLDTC_","R_NEWCMT_"];
     for (let i=1;i<6;i++){

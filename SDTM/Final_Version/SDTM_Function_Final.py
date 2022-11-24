@@ -225,4 +225,6 @@ class SDTM_TU:
 
         return self.df_empty
 
+        """New Lesion"""
+
         

@@ -11,8 +11,9 @@ warnings.filterwarnings("ignore")
 from openpyxl.utils.cell import get_column_letter
 
 # value값으로 인덱싱 하는 함수 
-# ex) find_cell(df , "TRGIND")
-def find_cell(dataframe , cell_value):
+# ex) find_cell(df , "TRGIND" , -1)
+# clink 는 TRGIND의 위 컬럼을 인덱싱하기 싶으면 -1로 I2 에서 I1으로 인덱싱해주는 매개변수
+def find_cell(dataframe , cell_value , clink):
     # 1에서 부터 데이터 행개수 +1 까지(그래야 데이터 끝까지 범위가 지정됨)
     for x in list(range(1 , dataframe.max_row+1)):
         # 1에서 부터 데이터 열개수 +1 까지(그래야 데이터 끝까지 범위가 지정됨)
@@ -21,8 +22,9 @@ def find_cell(dataframe , cell_value):
             if dataframe.cell(row=x, column=y).value==cell_value:
                     #찾으면 해당 열과 행-1 값 return
                     #행 -1하는 이유: USUBJID(A2)의 위의값에 SUBJECTNO(A1)이라고 지정하고 싶은 것이기 때문에 우리는 A2를 통해서 A1을 찍어줘야 한다.
-                    # 따라서 A1을 도출하려면 -1을 해야한다.
-                    return get_column_letter(y) + str(x-1)
+                    # 따라서 A1을 도출하려면 clink에 -1을 해야한다.
+                    return get_column_letter(y) + str(x+clink)
+                    
 
 # MMF에서 조정자가 Pick한 Analyst 표시하고 싶을 때 사용
 # 

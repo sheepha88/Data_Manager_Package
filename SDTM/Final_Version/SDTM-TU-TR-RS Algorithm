@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-19T07:47:30.965Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="4VdsmBHLbfYvty71AlxJ" version="20.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-19T08:14:42.313Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="jN1kf25q-FNAKE20CPu3" version="20.7.3" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
-    <mxGraphModel dx="4243" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3937" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -176,8 +176,8 @@
         <mxCell id="Jc-PIkuDOWIIcDXURi-F-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;중복행 제거&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- New Lesion은 방문일 마다 같을 수 있기 때문에 각 방문일이 중복될 수 있다.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-drop duplicates(subset =&amp;nbsp;[&quot;USUBJID&quot;, &quot;TULOC&quot;&amp;nbsp; , &quot;TULAT&quot;&amp;nbsp; , &quot;TUMETHOD&quot;&amp;nbsp; ,&amp;nbsp; &quot;TUDIR&quot;&amp;nbsp; , &quot;TUPORTOT&quot;])&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="-1172" y="1360" width="574.77" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="6A3rmpdOlFHdjwNSTOKe-4" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;DB&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
-          <mxGeometry x="-755.5" y="130" width="320" height="140" as="geometry" />
+        <mxCell id="6A3rmpdOlFHdjwNSTOKe-4" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;DB&lt;br&gt;&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-751" y="118.91" width="355.5" height="111.09" as="geometry" />
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6A3rmpdOlFHdjwNSTOKe-10" target="1CkgJYpbvYzahEarfgX_-1">
           <mxGeometry relative="1" as="geometry" />
@@ -354,6 +354,18 @@
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-53" value="대상자별 TRSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="309.5" y="1850" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-66" value="DataBase" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-773.25" y="230" width="400" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-67" value="VISIT" style="swimlane;startSize=20;html=1;fontSize=14;" vertex="1" parent="1CkgJYpbvYzahEarfgX_-66">
+          <mxGeometry y="20" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-68" value="&amp;nbsp; VISIT_NUMBER" style="swimlane;startSize=20;html=1;fontSize=14;" vertex="1" parent="1CkgJYpbvYzahEarfgX_-66">
+          <mxGeometry x="120" y="20" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-69" value="VISIT_GROUP" style="swimlane;startSize=20;html=1;fontSize=14;" vertex="1" parent="1CkgJYpbvYzahEarfgX_-66">
+          <mxGeometry x="270" y="20" width="130" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-19T06:42:29.694Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="2dt7UE1AauAC1LQ3SLva" version="20.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-19T06:48:35.872Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="F3cEhXLu_iTX6ysCfuGp" version="20.7.3" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
-    <mxGraphModel dx="4450" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3438" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -220,33 +220,36 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-3" value="func: SDTM_TR(SDTM_TU)&lt;br&gt;-SDTM_TU 상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
           <mxGeometry x="304" y="830" width="219" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.513;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-21">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="800" y="1315.0000000000002" as="targetPoint" />
+            <mxPoint x="720" y="1320" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="920" y="1260" />
-              <mxPoint x="800" y="1260" />
+              <mxPoint x="919" y="1260" />
+              <mxPoint x="574" y="1260" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-11">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="1315.0000000000002" as="targetPoint" />
             <Array as="points">
               <mxPoint x="920" y="1260" />
               <mxPoint x="950" y="1260" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-12">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100.0344827586214" y="1315.0000000000002" as="targetPoint" />
             <Array as="points">
               <mxPoint x="920" y="1260" />
               <mxPoint x="1100" y="1260" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-13">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1250.0344827586214" y="1315.0000000000002" as="targetPoint" />
             <Array as="points">
               <mxPoint x="920" y="1260" />
               <mxPoint x="1250" y="1260" />
@@ -259,20 +262,20 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-9" value="&lt;b&gt;Target Lesion DIAMETER TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).DIAMETER()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="-270" y="1109" width="320" height="91" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-11" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="1315" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-12" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="1315" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-13" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1190" y="1315" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-17" value="&lt;b&gt;Non-Target Lesion STATUS TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).STATUS()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="140" y="1109" width="320" height="91" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-18" value="&lt;b&gt;Non-Target Lesion STATUS TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).STATUS()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="590" y="1330" width="320" height="91" as="geometry" />
+        <mxCell id="1CkgJYpbvYzahEarfgX_-21" value="&lt;b&gt;Target Lesion SUMDIAM TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group=visit_grouping).SUMDIAM()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1349" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-22" value="&lt;b&gt;Target Lesion ACNSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).ACNSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1349" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-24" value="&lt;b&gt;Target Lesion PCBSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).PCBSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1349" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-25" value="&lt;b&gt;Target Lesion PCNSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).PCNSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="1349" width="320" height="91" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

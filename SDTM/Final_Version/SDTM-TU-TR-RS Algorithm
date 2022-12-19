@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-19T07:45:16.577Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="2YbZvGFFEJc7C1VMrNDG" version="20.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-19T07:47:30.965Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="4VdsmBHLbfYvty71AlxJ" version="20.7.3" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
-    <mxGraphModel dx="6201" dy="1698" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4243" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -159,7 +159,7 @@
         <mxCell id="-pR26tobsL-DmrlmT00T-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-46" target="-pR26tobsL-DmrlmT00T-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-pR26tobsL-DmrlmT00T-46" value="# TREVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="-pR26tobsL-DmrlmT00T-46" value="# TUEVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1235.5" y="1970" width="170" height="80" as="geometry" />
         </mxCell>
         <mxCell id="-pR26tobsL-DmrlmT00T-48" value="TU" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
@@ -346,13 +346,13 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-50" value="# TREVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="329.5" y="1970" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-51" value="TU" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-51" value="TR" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
           <mxGeometry x="384.5" y="2110" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-53" target="1CkgJYpbvYzahEarfgX_-50">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-53" value="대상자별 TUSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-53" value="대상자별 TRSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="309.5" y="1850" width="210" height="60" as="geometry" />
         </mxCell>
       </root>

@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-19T02:10:00.268Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="-3Qm1eg0xgs5qjiUUDxE" version="20.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-19T02:12:52.828Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="mBo2WrJQ1RnH_OfbHUFj" version="20.7.3" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
     <mxGraphModel dx="4574" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -232,7 +232,7 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="O-2raQH0WvXDWsYfqVgY-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1CkgJYpbvYzahEarfgX_-7" value="func: SDTM_TR(SDTM_TR)&lt;br&gt;-SDTM_TR상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+        <mxCell id="1CkgJYpbvYzahEarfgX_-7" value="func: SDTM_TR_CAL(SDTM_TR)&lt;br&gt;-SDTM_TR상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
           <mxGeometry x="523" y="990" width="219" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-9" value="&lt;b&gt;New Lesion TU변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;SDTM_TU(dataframe , &quot;R1&quot;).NL()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">

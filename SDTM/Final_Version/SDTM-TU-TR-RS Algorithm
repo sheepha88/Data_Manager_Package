@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-19T02:16:58.075Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="CwTpK1CX8TN8bHlz31hc" version="20.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-19T02:17:22.517Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="lJa3C9LEE0qdBCWMczm_" version="20.7.3" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
     <mxGraphModel dx="4450" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -198,7 +198,7 @@
           <mxGeometry x="490" y="1100" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="O-2raQH0WvXDWsYfqVgY-12" value="" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1019.5" y="1315" width="120" height="60" as="geometry" />
+          <mxGeometry x="859.5" y="1291" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="O-2raQH0WvXDWsYfqVgY-14" value="SDTM_TR().DIAMETER()" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="170" y="1100" width="160" height="80" as="geometry" />
@@ -226,7 +226,8 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1CkgJYpbvYzahEarfgX_-3" target="1CkgJYpbvYzahEarfgX_-7">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="920" y="890" />
+              <mxPoint x="414" y="980" />
+              <mxPoint x="920" y="980" />
               <mxPoint x="920" y="1210" />
             </Array>
           </mxGeometry>
@@ -238,7 +239,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-7" value="func: SDTM_TR_CAL(SDTM_TR)&lt;br&gt;-SDTM_TR상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
-          <mxGeometry x="970" y="1160" width="219" height="100" as="geometry" />
+          <mxGeometry x="810" y="1100" width="219" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1CkgJYpbvYzahEarfgX_-9" value="&lt;b&gt;New Lesion TU변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;SDTM_TU(dataframe , &quot;R1&quot;).NL()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="160" y="1221" width="260" height="70" as="geometry" />

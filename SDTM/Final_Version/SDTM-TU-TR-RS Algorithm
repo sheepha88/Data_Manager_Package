@@ -1,0 +1,396 @@
+<mxfile host="app.diagrams.net" modified="2022-12-23T03:55:49.971Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="Uu1zp94a-D9kJU8OwIUi" version="20.7.4" type="github">
+  <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
+    <mxGraphModel dx="4450" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-pR26tobsL-DmrlmT00T-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-1" target="-pR26tobsL-DmrlmT00T-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-1" value="Raw_data" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="270" y="10" width="289" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-2" target="-pR26tobsL-DmrlmT00T-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-2" value="&lt;b&gt;가공&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-컬럼지정&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-READER값 변경&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-Date값 DateType으로 변경&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-배치리스트에 대항되는 대상자 추출&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-Num값 int로 변경&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-Dictionarary mapping (ex , Indicator Yes or No)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="266" y="210" width="295" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-5" target="-pR26tobsL-DmrlmT00T-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-5" value="&lt;b&gt;조정자 pick 마킹(Flag_col)&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;-조정자가 두 평가자들 중 누굴 pick했는지 표시&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;-Y or N 으로 표시&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="260.46" y="390" width="307.07" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="-pR26tobsL-DmrlmT00T-7" target="-pR26tobsL-DmrlmT00T-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="414" y="630" />
+              <mxPoint x="-1260" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="-pR26tobsL-DmrlmT00T-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414.0344827586207" y="560.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="-pR26tobsL-DmrlmT00T-7" target="-pR26tobsL-DmrlmT00T-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="-pR26tobsL-DmrlmT00T-7" target="-pR26tobsL-DmrlmT00T-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="414" y="630" />
+              <mxPoint x="2840" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-7" value="&lt;b&gt;문자 치환&lt;/b&gt;&lt;br&gt;-Other값 변경 ex.Other (Site of Lesion)&lt;br&gt;-알파벳 대문자로 치환" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="272" y="520" width="284" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="-pR26tobsL-DmrlmT00T-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1260" y="1000" />
+              <mxPoint x="-1590" y="1000" />
+            </Array>
+            <mxPoint x="-1260" y="970" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-1" target="-pR26tobsL-DmrlmT00T-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1260" y="1000" />
+              <mxPoint x="-941" y="1000" />
+            </Array>
+            <mxPoint x="-1260" y="970" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-9" target="1CkgJYpbvYzahEarfgX_-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-9" value="TU" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-1290" y="690" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-15" target="1CkgJYpbvYzahEarfgX_-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-15" value="TR" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="388" y="690" width="52" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3150" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-16" value="RS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="2810" y="690" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-19" target="-pR26tobsL-DmrlmT00T-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-19" value="Target &amp;amp; Non-Target" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1650" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-21" target="-pR26tobsL-DmrlmT00T-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-21" value="New Lesion" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1000.6199999999999" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-23" target="-pR26tobsL-DmrlmT00T-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1590" y="1240" />
+              <mxPoint x="-1870" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="-pR26tobsL-DmrlmT00T-23" target="-pR26tobsL-DmrlmT00T-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-23" value="Basleine(Screening)만 추출" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-1705" y="1130" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="-pR26tobsL-DmrlmT00T-25" target="-pR26tobsL-DmrlmT00T-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1139" y="1590" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1670" y="1480" />
+              <mxPoint x="-1150" y="1480" />
+              <mxPoint x="-1150" y="1630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-25" value="&lt;b&gt;Target TU변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;SDTM_TU&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;(dataframe , &quot;R1&quot;).TL()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-2000" y="1260" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-39" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;align=center;strokeColor=default;edgeStyle=orthogonalEdgeStyle;" parent="1" source="-pR26tobsL-DmrlmT00T-27" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1415" y="1480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1325" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-27" value="&lt;b&gt;Non-Target TU변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;SDTM_TU(dataframe , &quot;R1&quot;).TL()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-1460" y="1260" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-29" target="-pR26tobsL-DmrlmT00T-40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-29" value="Basleine(Screening)제외&lt;br&gt;&amp;amp;&lt;br&gt;New Lesion &quot;Yes&quot;만 추출" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-1070" y="1130" width="258.76" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-33" target="-pR26tobsL-DmrlmT00T-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-33" value="&lt;b&gt;TL , NTL , NL 통합&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1) 총 6개 dataframe생성(R1 , R2의 TL , NTL , NL)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2)&amp;nbsp;[&quot;USUBJID&quot; , &quot;VISITNUM&quot;]로 정렬&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-1355.5" y="1610" width="410" height="75.29" as="geometry" />
+        </mxCell>
+        <mxCell id="O-2raQH0WvXDWsYfqVgY-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-40" target="Jc-PIkuDOWIIcDXURi-F-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-40" value="&lt;b&gt;New Lesion TU변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;b&gt;SDTM_TU(dataframe , &quot;R1&quot;).NL()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-1070" y="1260" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" parent="1" source="-pR26tobsL-DmrlmT00T-44" target="1CkgJYpbvYzahEarfgX_-42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-44" value="&lt;div&gt;STUDYID&lt;/div&gt;컬럼추가" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-1250.5" y="1740" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-pR26tobsL-DmrlmT00T-46" target="-pR26tobsL-DmrlmT00T-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-46" value="# TUEVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-1235.5" y="1970" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-pR26tobsL-DmrlmT00T-48" value="TU" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-1180.5" y="2110" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="O-2raQH0WvXDWsYfqVgY-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Jc-PIkuDOWIIcDXURi-F-1" target="-pR26tobsL-DmrlmT00T-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-885" y="1480" />
+              <mxPoint x="-1150" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Jc-PIkuDOWIIcDXURi-F-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;중복행 제거&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- New Lesion은 방문일 마다 같을 수 있기 때문에 각 방문일이 중복될 수 있다.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-drop duplicates(subset =&amp;nbsp;[&quot;USUBJID&quot;, &quot;TULOC&quot;&amp;nbsp; , &quot;TULAT&quot;&amp;nbsp; , &quot;TUMETHOD&quot;&amp;nbsp; ,&amp;nbsp; &quot;TUDIR&quot;&amp;nbsp; , &quot;TUPORTOT&quot;])&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="-1172" y="1360" width="574.77" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6A3rmpdOlFHdjwNSTOKe-4" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;DB&lt;br&gt;&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-751" y="118.91" width="355.5" height="111.09" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="6A3rmpdOlFHdjwNSTOKe-10" target="1CkgJYpbvYzahEarfgX_-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6A3rmpdOlFHdjwNSTOKe-10" value="&lt;b style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;DB&lt;/b&gt;&lt;br style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-VISIT NUMBER mapping&lt;/span&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-1580" y="835" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;func: SDTM_TU()&lt;/b&gt;&lt;/font&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" parent="1" vertex="1">
+          <mxGeometry x="-1335" y="830" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-3" target="1CkgJYpbvYzahEarfgX_-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="414" y="1020" />
+              <mxPoint x="1140" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-3" target="1CkgJYpbvYzahEarfgX_-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="414" y="1020" />
+              <mxPoint x="-220" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-3" target="1CkgJYpbvYzahEarfgX_-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="414" y="1020" />
+              <mxPoint x="200" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-3" value="func: SDTM_TR(SDTM_TU)&lt;br&gt;-SDTM_TU 상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" parent="1" vertex="1">
+          <mxGeometry x="304" y="830" width="219" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1230" />
+              <mxPoint x="600" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-22" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1230" />
+              <mxPoint x="960" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1230" />
+              <mxPoint x="1320" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-7" target="1CkgJYpbvYzahEarfgX_-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1230" />
+              <mxPoint x="1680" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-7" value="func: SDTM_TR_CAL(SDTM_TR)&lt;br&gt;-SDTM_TR상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" parent="1" vertex="1">
+          <mxGeometry x="1030" y="1070" width="219" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-9" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-220" y="1500" />
+              <mxPoint x="414" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-9" value="&lt;b&gt;Target Lesion DIAMETER TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).DIAMETER()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-380" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-17" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="1500" />
+              <mxPoint x="414" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-17" value="&lt;b&gt;Non-Target Lesion STATUS TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).STATUS()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-21" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="1500" />
+              <mxPoint x="414" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-21" value="&lt;b&gt;Target Lesion SUMDIAM TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group=visit_grouping).SUMDIAM()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="439.5" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-22" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="1500" />
+              <mxPoint x="414" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-22" value="&lt;b&gt;Target Lesion ACNSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).ACNSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="799.5" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-24" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="1500" />
+              <mxPoint x="415" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-24" value="&lt;b&gt;Target Lesion PCBSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).PCBSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1159.5" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-25" target="1CkgJYpbvYzahEarfgX_-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="1500" />
+              <mxPoint x="415" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-25" value="&lt;b&gt;Target Lesion PCNSD TR변환&lt;br&gt;fucn :&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 153);&quot;&gt;&lt;br&gt;&lt;b&gt;SDTM_TR_CAL(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group=visit_grouping).PCNSD()&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;-Reader값 R1 , R2 나눠서 진행" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1519.5" y="1260" width="320" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-30" target="1CkgJYpbvYzahEarfgX_-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-30" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;&quot;&gt;DB&lt;/font&gt;&lt;/b&gt;&lt;br&gt;-VISIT GROUP mapping&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="60" y="835" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-42" target="-pR26tobsL-DmrlmT00T-46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-42" value="대상자별 TUSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-1255.5" y="1850" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-46" target="1CkgJYpbvYzahEarfgX_-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-46" value="&lt;b&gt;통합&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1) 총 12개 dataframe생성(R1 , R2의 TL , NTL , NL)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2)&amp;nbsp;[&quot;USUBJID&quot; , &quot;VISITNUM&quot;]로 정렬&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="209.5" y="1610" width="410" height="75.29" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-48" target="1CkgJYpbvYzahEarfgX_-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-48" value="&lt;div&gt;STUDYID 컬럼추가&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="314.5" y="1740" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1CkgJYpbvYzahEarfgX_-50" target="1CkgJYpbvYzahEarfgX_-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-50" value="# TREVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="329.5" y="1970" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-51" value="TR" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="384.5" y="2110" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" parent="1" source="1CkgJYpbvYzahEarfgX_-53" target="1CkgJYpbvYzahEarfgX_-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-53" value="대상자별 TRSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="309.5" y="1850" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-66" value="DataBase" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-773.25" y="230" width="400" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-67" value="VISIT" style="swimlane;startSize=20;html=1;fontSize=14;" parent="1CkgJYpbvYzahEarfgX_-66" vertex="1">
+          <mxGeometry y="20" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-68" value="&amp;nbsp; VISIT_NUMBER" style="swimlane;startSize=20;html=1;fontSize=14;" parent="1CkgJYpbvYzahEarfgX_-66" vertex="1">
+          <mxGeometry x="120" y="20" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1CkgJYpbvYzahEarfgX_-69" value="VISIT_GROUP" style="swimlane;startSize=20;html=1;fontSize=14;" parent="1CkgJYpbvYzahEarfgX_-66" vertex="1">
+          <mxGeometry x="270" y="20" width="130" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-3" value="Target" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2390" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-6" value="Non Target" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2780" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-11" value="Overall Response" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="3090" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

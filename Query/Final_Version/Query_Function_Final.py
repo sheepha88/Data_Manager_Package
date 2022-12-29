@@ -7,6 +7,30 @@ warnings.filterwarnings("ignore")
 
 
 
+class printerror(Exception):
+    def __init__(self, msg) :
+          self.msg = msg
+    def __str__(self):
+          return self.msg
+
+class Baselineerror(printerror):
+    def __init__(self,Baselinename ) :
+        self.msg = ("\"{}\" do not match with baselinename of dataframe ".format(Baselinename ))
+
+class USUBJIDerror(printerror):
+    def __init__(self,USUBJID ) :
+        self.msg = ("\"{}\" do not exist in USUBJID of dataframe ".format(USUBJID ))
+
+
+class ADJ_PICKerror(printerror): 
+    def __init__(self,USUBJID ) : 
+        self.msg = ( "Subject ID : \"{}\" 조정자값이 두 평가자 값과 달라 확인요망".format(USUBJID))
+
+class First_VISIT_Only(printerror):
+    def __init__(self ) :
+        self.msg = "첫 방문일을 제외한 다른 방문일 포함되어있습니다. 첫 방문일만 가능합니다."
+
+
 # Modality와 Scan Type에 따라 Date가 잘 입력 되었는가     2022.10.25
 # -> SCAN TYPE의 Date가 잘못 기재된 경우
 # ex) CT SCAN , Chest 이면 Form 상단의 영상촬영일자의 CT-Chest Date와 동일해야 한다.
@@ -182,6 +206,11 @@ def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analy
     elif baseline_Dataframe.loc[list(baseline_Dataframe[baseline_Dataframe["READER"]==ADJUDICATOR].index)[0] , columns].equals\
         (baseline_Dataframe.loc[list(baseline_Dataframe[baseline_Dataframe["READER"]==Analyst_2].index)[0] , columns]):
             ADJ_Pick_Analayst = Analyst_2
+    
+
+    #조정자가 1차 평가자들 중 아무로 고르지 않았을 때 error발생
+    else:
+        raise ADJ_PICKerror(USUBJID)
     
     
     #baseline에서 조정자가 pick한 Analyst와 조정자값만으로 이루어진 테이블 생성

@@ -203,9 +203,9 @@ class SDTM_TU:
                                                     self.dataframe_copy.loc[i,"TUACPTFL"]]
 
         #TUNLKID (T01 , T02...) df_empty길이의 /5 만큼 반복하게 한다.  ex(df_empty길이의 /5가 2라면 , T01 , T02... , T01 , T02...)
-        TULNKID_T_list = ["{}-NT0{}".format(self.READER , i) for i in list(map(str,range(1,6)))]*int((len(self.df_empty)/5))
+        TULNKID_NT_list = ["{}-NT0{}".format(self.READER , i) for i in list(map(str,range(1,6)))]*int((len(self.df_empty)/5))
 
-        self.df_empty["TULNKID"] = TULNKID_T_list
+        self.df_empty["TULNKID"] = TULNKID_NT_list
         
         #null값 제외
         self.df_empty = self.df_empty[self.df_empty["TULOC"].notnull()]

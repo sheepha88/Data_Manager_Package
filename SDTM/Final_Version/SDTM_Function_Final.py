@@ -145,7 +145,7 @@ class SDTM_TU:
     """Target Lesion """
     @columns_cleansing
     def TL(self):
-        #dataframe의 방문일이 첫 방문일 이외의 다른 방문일이 포함되어있다면 error발생
+        # dataframe의 방문일이 첫 방문일 이외의 다른 방문일이 포함되어있다면 error발생
         if len(self.dataframe_copy["VISIT"].unique()) > 1:
             raise First_VISIT_Only
         if list(self.dataframe_copy["VISIT"].unique())[0] !=  list(self.visit_number.keys())[0]:

@@ -816,15 +816,15 @@ def OverallResponse_YN(dataframe , OverallResponsecol):
     
     #판독자와 알고리즘 결과값이 다른 경우 표시       
     for i in list(range(len(dataframe))):
-        if dataframe.loc[i, OverallResponsecol] != dataframe.loc[i, "OVRESP_YJW"]:
+        if dataframe.loc[i, OverallResponsecol] != dataframe.loc[i, "OVRLRESP_YJW"]:
             dataframe.loc[i,"YN"] = "N"
             
-        if (pd.isnull(dataframe.loc[i, OverallResponsecol])) & (pd.isnull(dataframe.loc[i, "OVRESP_YJW"])):
+        if (pd.isnull(dataframe.loc[i, OverallResponsecol])) & (pd.isnull(dataframe.loc[i, "OVRLRESP_YJW"])):
             dataframe.loc[i,"YN"] = "Y"
             
 
 
-        if dataframe.loc[i, OverallResponsecol] == dataframe.loc[i, "OVRESP_YJW"]:
+        if dataframe.loc[i, OverallResponsecol] == dataframe.loc[i, "OVRLRESP_YJW"]:
             dataframe.loc[i,"YN"] = "Y"
                 
     return dataframe

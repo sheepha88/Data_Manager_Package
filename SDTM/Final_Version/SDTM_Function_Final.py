@@ -145,12 +145,6 @@ class SDTM_TU:
     """Target Lesion """
     @columns_cleansing
     def TL(self):
-        #dataframe의 방문일이 첫 방문일 이외의 다른 방문일이 포함되어있다면 error발생
-        if len(self.dataframe_copy["VISIT"].unique()) > 1:
-            raise First_VISIT_Only
-        if list(self.dataframe_copy["VISIT"].unique())[0] !=  list(self.visit_number.keys())[0]:
-            raise First_VISIT_Only
-
         #cnt = df_empty의 차례로 append하기 위해 -1부터 시작 그래야 첫번째때 0(-1+1)번째 행에 append 된다
         cnt = -1
         for i in range(len(self.dataframe_copy)):

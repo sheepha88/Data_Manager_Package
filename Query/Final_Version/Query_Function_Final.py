@@ -6,11 +6,77 @@ import openpyxl
 warnings.filterwarnings("ignore")
 
 
+
+class printerror(Exception):
+    def __init__(self, msg) :
+          self.msg = msg
+    def __str__(self):
+          return self.msg
+
+class Baselineerror(printerror):
+    def __init__(self,Baselinename ) :
+        self.msg = ("\"{}\" do not match with baselinename of dataframe ".format(Baselinename ))
+
+class USUBJIDerror(printerror):
+    def __init__(self,USUBJID ) :
+        self.msg = ("\"{}\" do not exist in USUBJID of dataframe ".format(USUBJID ))
+
+
+class ADJ_PICKerror(printerror): 
+    def __init__(self,USUBJID ) : 
+        self.msg = ( "Subject ID : \"{}\" 조정자값이 두 평가자 값과 달라 확인요망".format(USUBJID))
+
+class First_VISIT_Only(printerror):
+    def __init__(self ) :
+        self.msg = "첫 방문일을 제외한 다른 방문일 포함되어있습니다. 첫 방문일만 가능합니다."
+
+
+# Modality와 Scan Type에 따라 Date가 잘 입력 되었는가     2022.10.25
+# -> SCAN TYPE의 Date가 잘못 기재된 경우
+# ex) CT SCAN , Chest 이면 Form 상단의 영상촬영일자의 CT-Chest Date와 동일해야 한다.
+def ScanDataCheck(dataframe):
+    result_dataframe = pd.dataframe(coloums=dataframe.columns)
+    result_dataframe['DM_CMT']=np.nan
+    # TUMETHOD_NT_i : CT,MRI,Other  , TUIMG_NT_i : Chest,Abdomen/Pelvis,Other , TUDTC_NT_i , 
+    for i in range(len(dataframe)):
+        for j in range(1,6):
+            modality = "TUMETHOD_NT_"+str(j)
+            scan_type = "TUIMG_NT_"+str(j)
+            scan_date = "TUDTC_NT_"+str(j)
+            if (dataframe.loc[i,modality]!=None and dataframe.loc[i,scan_type]!=None):
+                if dataframe.loc[i,scan_date] == None:
+                    new_line=dataframe.loc[i,:]
+                    new_line["DM_CMT"] = "날짜를 불러오지 못한 경우 Non-Target Lession{}번째".format(j)
+                    result_dataframe.append(new_line)
+                else:
+                    original_type = "TUDTC_"
+                    if not dataframe.loc[i,modality] in ["CT","MRI"]:
+                        original_type+="OT_OT"
+                    else:
+                        if dataframe.loc[i,modality]=="CT_":
+                            original_type+="CT"
+                        else:
+                            original_type+="MRI_"
+
+                        if dataframe.loc[i,scan_type]=="Chest":
+                            original_type+="CHEST"
+                        elif dataframe.loc[i,scan_type]=="Abdomen/Pelvis":
+                            original_type+="ABD"
+                        else:
+                            original_type+="OT"
+                    
+                    if dataframe.loc[i,original_type]==None:
+                        new_line=dataframe.loc[i,:]
+                        new_line["DM_CMT"] = "옵션을 잘못 선택해서 날짜 값이 없는 타입을 선택한 경우 Non-Target Lession {}번째".format(j)
+                        result_dataframe.append(new_line)
+                
+    return result_dataframe      
+
 # Status가 Present이면 반드시 Non-CR/Non-PD 여아한다.     2022-10-25
 # Non target 에서 present인데 Non CR Non PD가 아닌 경우를 검토하는 함수  
 # Status가 Present이면 반드시 Non-CR/Non-PD 여아한다. // col_status를 각각 순회하여 Present인데 Non CR Non PD인지 검토 
-# ex) NonTargetResponse(df_NTL , "Non-CR/Non-PD" , "NTRGRESP" , "Present" , col_status=["TUMSTATE_NT_1" ,"TUMSTATE_NT_2" ,"TUMSTATE_NT_3" , "TUMSTATE_NT_4" , "TUMSTATE_NT_5"])
-def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status ):
+# ex) NonTargetResponse(df_NTL , "Non-CR/Non-PD" , "NTRGRESP" , "Present" , col_status=["TUMSTATE_NT_1" ,"TUMSTATE_NT_2" ,"TUMSTATE_NT_3" , "TUMSTATE_NT_4" , "TUMSTATE_NT_5"] , "Unequivocal progression" )
+def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status , Lesion_status ):
 
     df_frame = pd.DataFrame(columns = dataframe.columns)
     df_frame["DM_CMT"] = np.nan
@@ -20,28 +86,28 @@ def NonTargetResponse_NonCR_NonPD(dataframe , NonTargetResponse , NonTargetRespo
 
         option1 = Status_response in list(dataframe.loc[i,col_status])
         option2 = dataframe.loc[i , NonTargetResponse_col]!=NonTargetResponse
-        option3 = not "Unequivocal progression" in list(dataframe.loc[i,col_status])     # Unequivocal progression 철자 확인하기 ( 과제마다 다르다. )
+        option3 = not Lesion_status in list(dataframe.loc[i,col_status])   # "Unequivocal progression" 입력시 철자확인 할 것  
 
         if option1 and option2 and option3:
             
             df_empty = dataframe.loc[i ,:]
             df_empty["DM_CMT"] = "Lesion Status가 {} 인데 , Response가 {}가 아닌 경우".format(Status_response , NonTargetResponse)
 
-            #행을 추가하면서 df_NTL_NTRGRESP_incorrect 에 저장
+            # 행을 추가하면서 df_NTL_NTRGRESP_incorrect 에 저장
             df_frame = df_frame.append(df_empty)
 
     return df_frame
 
-#Non Target Response PD 검토 함수
+# Non Target Response PD 검토 함수
 # Status 중에서 하나라도 Unequivocal Progression 이면 출력
 # ex) NonTargetResponse(df_NTL , "PD" , "NTRGRESP" , "Unequivocal Progression" , col_status=["TULSTAT_1" ,"TULSTAT_2" ,"TULSTAT_3" , "TULSTAT_4" , "TULSTAT_5"])
 def NonTargetResponse_PD(dataframe , NonTargetResponse , NonTargetResponse_col , Status_response , col_status  ):
 
-    #dataframe: NTL
-    #NonTargetResponse : PD , PR , ...
-    #NonTargetResponse_col : NRGRESP
-    #Status_response : Absent , Present,..
-    #col_status : TUMSTATE_NT_1 , ....
+    # dataframe: NTL
+    # NonTargetResponse : PD , PR , ...
+    # NonTargetResponse_col : NRGRESP
+    # Status_response : Absent , Present,..
+    # col_status : TUMSTATE_NT_1 , ....
     
     df_frame = pd.DataFrame(columns = dataframe.columns)
     df_frame["DM_CMT"] = np.nan
@@ -115,6 +181,13 @@ def NonTargetResponse_CR(dataframe , NonTargetResponse , NonTargetResponse_col ,
 # 1. raw_dataframe에서 해당 대상자의 baseline에서 columns를 기준으로 ADJ와 Analyst를 비교하여 ADJ가 누굴 택했는지 확인(인자 = ADJ_Pick_Analayst)
 # 2. ADJ 와 선택된 Analyst들만 있는 테이블을 뽑아내고 , 조정자 행과 선택된 Analyst행의 columns값들을 비교하여 하나라도 틀린 행이 있으면 출력
 
+###함수이용방법 :반목문 통해서 빈데이터 프레임에 데이터프레임 함수값을 append하여 채워진 dataframe을 return한다
+# emt_dataframe = pd.DataFrame(columns=df.columns)
+# for i in list(df["USUBJID"].unique()):
+#     emt_dataframe = emt_dataframe.append(ADJ_PICK(df, i , "Screening" , "ADJUDICATOR" , "Analyst#1" , "Analyst#2" , ["TRIND","T_1","TUALOT_T_1","TULAT_T_1","TUDIR_T_1","TUPORT0T_T_1"]))
+
+# emt_dataframe
+
 def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analyst_2 , columns):
     
     #해당 대상자의 baseline만 뽑아낸 테이블
@@ -134,6 +207,11 @@ def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analy
         (baseline_Dataframe.loc[list(baseline_Dataframe[baseline_Dataframe["READER"]==Analyst_2].index)[0] , columns]):
             ADJ_Pick_Analayst = Analyst_2
     
+
+    #조정자가 1차 평가자들 중 아무로 고르지 않았을 때 error발생
+    else:
+        raise ADJ_PICKerror(USUBJID)
+    
     
     #baseline에서 조정자가 pick한 Analyst와 조정자값만으로 이루어진 테이블 생성
     visit_Dataframe = visit_Dataframe[visit_Dataframe["READER"].isin([ADJUDICATOR ,ADJ_Pick_Analayst ])].reset_index(drop=True)
@@ -151,10 +229,8 @@ def ADJ_PICK(dataframe, USUBJID , Baselinename , ADJUDICATOR , Analyst_1 , Analy
     return result 
     
     
+    
         
-
-
-
 #map develop 함수 -> dictionary에 없는 값은 원래의 값을 출력
 # ex) map_dict(df , "LAGRADE",LAGRADE_dict ).unique()
 def map_dict(dataframe, col , dict_name):
@@ -740,16 +816,123 @@ def OverallResponse_YN(dataframe , OverallResponsecol):
     
     #판독자와 알고리즘 결과값이 다른 경우 표시       
     for i in list(range(len(dataframe))):
-        if dataframe.loc[i, OverallResponsecol] != dataframe.loc[i, "OVRESP_YJW"]:
+        if dataframe.loc[i, OverallResponsecol] != dataframe.loc[i, "OVRLRESP_YJW"]:
             dataframe.loc[i,"YN"] = "N"
             
-        if (pd.isnull(dataframe.loc[i, OverallResponsecol])) & (pd.isnull(dataframe.loc[i, "OVRESP_YJW"])):
+        if (pd.isnull(dataframe.loc[i, OverallResponsecol])) & (pd.isnull(dataframe.loc[i, "OVRLRESP_YJW"])):
             dataframe.loc[i,"YN"] = "Y"
             
 
 
-        if dataframe.loc[i, OverallResponsecol] == dataframe.loc[i, "OVRESP_YJW"]:
+        if dataframe.loc[i, OverallResponsecol] == dataframe.loc[i, "OVRLRESP_YJW"]:
             dataframe.loc[i,"YN"] = "Y"
                 
     return dataframe
         
+
+
+
+# Modality와 Scan Type에 따라 Date가 잘 입력 되었는가  ( Incorrect Check )         2022-10-23
+# ex) CT SCAN , chest 이면 영상촬영일자의 CT-Chest Date와 동일 및 데이터를 가져와야한다.
+
+
+def ScanDataCheck(dataframe):
+    result_dataframe = pd.dataframe(coloums=dataframe.columns)
+    result_dataframe['DM_CMT']=np.nan
+    # TUMETHOD_NT_i : CT,MRI,Other  , TUIMG_NT_i : Chest,Abdomen/Pelvis,Other , TUDTC_NT_i , 
+    for i in range(len(dataframe)):
+        for j in range(1,6):
+            modality = "TUMETHOD_NT_"+str(j)
+            scan_type = "TUIMG_NT_"+str(j)
+            scan_date = "TUDTC_NT_"+str(j)
+            if (dataframe.loc[i,modality]!=None and dataframe.loc[i,scan_type]!=None):
+                if dataframe.loc[i,scan_date] == None:
+                    new_line=dataframe.loc[i,:]
+                    new_line["DM_CMT"] = "Scan Type 날짜를 불러오지 못한 경우 Non-Target Lession {}번째".format(j)
+                    result_dataframe.append(new_line)
+                # 아래는 옵션을 잘못 선택하여 당연히 없는 경우
+                else:
+                    original_type = "TUDTC_"
+                    if not dataframe.loc[i,modality] in ["CT","MRI"]:
+                        original_type+="OT_OT"
+                    else:
+                        if dataframe.loc[i,modality]=="CT_":
+                            original_type+="CT"
+                        else:
+                            original_type+="MRI_"
+
+                        if dataframe.loc[i,scan_type]=="Chest":
+                            original_type+="CHEST"
+                        elif dataframe.loc[i,scan_type]=="Abdomen/Pelvis":
+                            original_type+="ABD"
+                        else:
+                            original_type+="OT"
+                    
+                    if dataframe.loc[i,original_type]==None:
+                        new_line=dataframe.loc[i,:]
+                        new_line["DM_CMT"] = "옵션을 잘못 선택해서 날짜 값이 없는 타입을 선택한 경우 Non-Target Lession {}번째".format(j)
+                        result_dataframe.append(new_line)
+                
+    return result_dataframe      
+
+
+
+
+# Date of Target , NonTarget , Date of image acquisition 가 Logic에 따라 입력이 잘 되었는가     2022-10-25
+# ex) PD는 가장 최근 날짜 그외 나머지는 가장 과거 날짜가 제대로 기재되어있는지 검증하는 코드 
+
+def checkData(dataframe):
+    targetLesion = ['TUDTC_T_1','TUDTC_T_2','TUDTC_T_3','TUDTC_T_4','TUDTC_T_5'] # TRGRESP_RS /RSDTC_T         해당 컬럼 값은 Gen001-101 기준 
+    nonTargetLesion = ['TUDTC_NT_1','TUDTC_NT_2','TUDTC_NT_3','TUDTC_NT_4','TUDTC_NT_5'] # NTRGRESP_RS / RSDTC_NT
+    newLesion = ['TUIMNO_NEW_1','TUIMNO_NEW_2','TUIMNO_NEW_3','TUIMNO_NEW_4','TUIMNO_NEW_5'] # OVRLRESP_RS / RSDTC_RS
+    
+    result_df = pd.DataFrame(columns=dataframe.columns)
+    result_df["DM_CMT"]=np.nan
+
+    for i in range(len(dataframe)):
+        # PD 가장 과거 / 나머지는 최근 날짜
+        targetDate = [dataframe.loc[i,x] for x in targetLesion if dataframe.loc[i,x]!=None]
+        # ===== ↑1 코드는 ↓4줄의 코드와 같다.
+        # targetDate=[]
+        # for x in targetLesion:
+        #   if dataframe.loc[i,x]!=None:
+        #     targetDate.append(dataframe.loc[i,x])
+
+        def pd_Message(Message):
+            new_line=dataframe.loc[i,:]
+            new_line["DM_CMT"]= Message
+            result_df.append(new_line)
+
+
+        targetDate.sort()     # sort로 정렬한 뒤 가장 과거 인덱스 0   가장 최근 인덱스 -1
+        if dataframe.loc[i,"TRGRESP_RS"]=="PD" and dataframe.loc[i,'RSDTC_T']!=targetDate[0]:
+        #   new_line=dataframe.loc[i,:]
+        #   new_line["DM_CMT"]= "targetLesion 이 PD 인데 날짜가 가장 과거가 아님"
+        #   result_df.append(new_line)
+            pd_Message("TargetLesion이 PD 인데, 날짜가 가장 과거가 아님")
+            
+        elif dataframe.loc[i,"TRGRESP_RS"]!="PD" and dataframe.loc[i,'RSDTC_T']!=targetDate[-1]:
+            pd_Message("TargetLesion이 PD가 아닌데, 날짜가 가장 최근이 아님")
+
+        nonTargetDate= [dataframe.loc[i,x] for x in nonTargetLesion if dataframe.loc[i,x]!=None]
+        nonTargetDate.sort()
+
+        if dataframe.loc[i,"NTRGRESP_RS"]=="PD" and dataframe.loc[i,'RSDTC_NT']!=targetDate[0]:
+            pd_Message("NonTargetLesion이 PD 인데, 날짜가 가장 과거가 아님")
+            
+        elif dataframe.loc[i,"NTRGRESP_RS"]!="PD" and dataframe.loc[i,'RSDTC_NT']!=targetDate[-1]:
+            pd_Message("NonTargetLesion이 PD가 아닌데, 날짜가 가장 최근이 아님")
+
+        newLesionDate=[dataframe.loc[i,x] for x in newLesion if dataframe.loc[i,x]!=None]
+        overAllDate=newLesionDate+nonTargetDate+targetDate
+        overAllDate.sort()
+
+        if dataframe.loc[i,"OVRLRESP_RS"]=="PD" and dataframe.loc[i,'RSDTC_RS']!=targetDate[0]:
+            pd_Message("Overall이 PD 인데, 날짜가 가장 과거가 아님")
+            
+        elif dataframe.loc[i,"OVRLRESP_RS"]!="PD" and dataframe.loc[i,'RSDTC_RS']!=targetDate[-1]:
+            pd_Message("Overall이 PD가 아닌데, 날짜가 가장 최근이 아님")
+      
+    return result_df
+
+

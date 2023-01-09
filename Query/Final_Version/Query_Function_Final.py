@@ -841,7 +841,7 @@ def checkData(dataframe):
         elif dataframe.loc[i,"TRGRESP_RS"]!="PD" and dataframe.loc[i,'RSDTC_T']!=targetDate[-1]:
             pd_Message("TargetLesion이 PD가 아닌데, 날짜가 가장 최근이 아님")
 
-        nonTargetDate= [dataframe.loc[i,x] for x in nonTargetLesion if dataframe.loc[i,x]!=None]
+        nonTargetDate= [dataframe.loc[i,x] for x in nonTargetLesion if pd.isnull(dataframe.loc[i,x])]
         nonTargetDate.sort()
 
         if dataframe.loc[i,"NTRGRESP_RS"]=="PD" and dataframe.loc[i,'RSDTC_NT']!=targetDate[0]:

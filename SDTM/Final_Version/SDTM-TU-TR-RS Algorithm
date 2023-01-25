@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-23T03:55:49.971Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="Uu1zp94a-D9kJU8OwIUi" version="20.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-25T04:09:20.024Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="7D_CWEsQSeNPb4QtLVVP" version="20.7.4" type="github">
   <diagram id="dCWLruO90h-xmTkf5w0O" name="페이지-1">
-    <mxGraphModel dx="4450" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3680" dy="502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -79,19 +79,8 @@
         <mxCell id="-pR26tobsL-DmrlmT00T-15" value="TR" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="388" y="690" width="52" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-3">
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="6QXgIgBIGRFnD7nbiGqt-1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-pR26tobsL-DmrlmT00T-16" target="XbibH41BKt3Hto2c3sRs-11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3150" y="840" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="-pR26tobsL-DmrlmT00T-16" value="RS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="2810" y="690" width="60" height="80" as="geometry" />
@@ -381,14 +370,93 @@
         <mxCell id="1CkgJYpbvYzahEarfgX_-69" value="VISIT_GROUP" style="swimlane;startSize=20;html=1;fontSize=14;" parent="1CkgJYpbvYzahEarfgX_-66" vertex="1">
           <mxGeometry x="270" y="20" width="130" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-3" value="Target" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="2390" y="860" width="120" height="60" as="geometry" />
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XbibH41BKt3Hto2c3sRs-3" target="6QXgIgBIGRFnD7nbiGqt-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2445" y="1240" />
+              <mxPoint x="2842" y="1240" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-6" value="Non Target" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="2780" y="860" width="120" height="60" as="geometry" />
+        <mxCell id="XbibH41BKt3Hto2c3sRs-3" value="Target Response&lt;br&gt;&lt;br&gt;&lt;b&gt;SDTM_RS(df_TNT , &quot;R1&quot; , visit_dict=visit_num , visit_group = visit_grouping).Target_Response()&lt;br&gt;&lt;br&gt;&lt;/b&gt;-Reader값 R1 , R2 나눠서 진행&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2330" y="1040" width="230" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="XbibH41BKt3Hto2c3sRs-11" value="Overall Response" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="3090" y="860" width="120" height="60" as="geometry" />
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="XbibH41BKt3Hto2c3sRs-6" target="6QXgIgBIGRFnD7nbiGqt-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-6" value="Non Target&lt;br&gt;&lt;br&gt;&lt;b&gt;SDTM_RS(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group = visit_grouping).Non_Target_Response()&lt;br&gt;&lt;br&gt;&lt;/b&gt;-Reader값 R1 , R2 나눠서 진행&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2730" y="1040" width="225" height="112.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="XbibH41BKt3Hto2c3sRs-11" target="6QXgIgBIGRFnD7nbiGqt-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3170" y="1240" />
+              <mxPoint x="2842" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XbibH41BKt3Hto2c3sRs-11" value="Overall Response&lt;br&gt;&lt;br&gt;&lt;b&gt;SDTM_RS(df_TNT , &quot;R2&quot; , visit_dict=visit_num , visit_group = visit_grouping).Overall_Response()&lt;br&gt;&lt;br&gt;&lt;/b&gt;-Reader값 R1 , R2 나눠서 진행&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="3060" y="1040" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-1" target="XbibH41BKt3Hto2c3sRs-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2840" y="1010" />
+              <mxPoint x="2840" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-1" target="XbibH41BKt3Hto2c3sRs-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2840" y="990" />
+              <mxPoint x="2445" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-1" target="XbibH41BKt3Hto2c3sRs-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2840" y="990" />
+              <mxPoint x="3180" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-1" value="func: SDTM_RS(SDTM_TR)&lt;br&gt;-SDTM_TR 상속" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+          <mxGeometry x="2730.5" y="840" width="219" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.043;entryY=0.45;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-2" target="6QXgIgBIGRFnD7nbiGqt-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;&quot;&gt;DB&lt;/font&gt;&lt;/b&gt;&lt;br&gt;-VISIT GROUP mapping&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2440" y="840" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-17" target="6QXgIgBIGRFnD7nbiGqt-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-17" value="&lt;b&gt;통합&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1) 총 6개 dataframe생성(R1 , R2의 TL , NTL , OR)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2)&amp;nbsp;[&quot;USUBJID&quot; , &quot;VISITNUM&quot;]로 정렬&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2637.5" y="1290" width="410" height="75.29" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-19" target="6QXgIgBIGRFnD7nbiGqt-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-19" value="&lt;div&gt;STUDYID 컬럼추가&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2742.5" y="1420" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-21" target="6QXgIgBIGRFnD7nbiGqt-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-21" value="# RSEVALID 판독자 명 변경" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2757.5" y="1650" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-22" value="RS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="2812.5" y="1790" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;" edge="1" parent="1" source="6QXgIgBIGRFnD7nbiGqt-24" target="6QXgIgBIGRFnD7nbiGqt-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6QXgIgBIGRFnD7nbiGqt-24" value="대상자별 RSSEQ 지정 컬럼추가" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2737.5" y="1530" width="210" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

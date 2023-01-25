@@ -31,6 +31,84 @@ class First_VISIT_Only(printerror):
         self.msg = "첫 방문일을 제외한 다른 방문일 포함되어있습니다. 첫 방문일만 가능합니다."
 
 
+# Lymphnode 쿼리 개발중...
+## Lymphnode가 10mm미만이면 CR
+
+# # i = 행
+# df_empty = pd.DataFrame(columns = df_TL.columns)
+
+# for i in range(len(df_TL)):
+#     # Location 1~5까지 리스트화
+#     Lesion_list = df_TL.loc[i , ["TRGOC_1" , "TRGOC_2" , "TRGOC_3" , "TRGOC_4" , "TRGOC_5" ]].values.tolist()
+#     Lesion_list = [x for x in Lesion_list if pd.notnull(x)]
+
+#     #nan을 제외한 Lesion list에서 Lymphnode만 있는 경우
+#     #Lymphnode만 있어야 하므로 일단 Lesion개수가 l개인지 확인
+#     lesion_unique = list(set(Lesion_list))
+
+#     # Lymphnode만 있는 행 추출
+#     if len(lesion_unique) ==1:
+#         if "LymphNode" == lesion_unique[0]:
+            
+
+#             #Lymphnode만 있는 행에서 Lesion 길이 추출
+#             Measurement_list = df_TL.loc[i , ["TRGLDIAM_1" , "TRGLDIAM_2", "TRGLDIAM_3", "TRGLDIAM_4", "TRGLDIAM_5"]].values.tolist()
+#             Measurement_list = [m for m in Measurement_list if pd.notnull(m)]
+
+#             #길이가 모두 NA이어서 Measurement_list가 []인 경우는 제외
+#             if len(Measurement_list)>0:
+#                 #Measurement_list에서 요소들이 10미만인 경우만 추출
+#                 if all([z<10 for z  in Measurement_list ]):
+#                     #CR이 아닌 경우 출력
+#                     if "CR" not in df_TL.loc[i,["TRGRESP"]].values.tolist():
+#                         df_empty = df_empty.append(df_TL.loc[i,:])
+
+# df_empty
+
+#----------------------------------------------------------------------------------------------------------------------------------
+
+#PD_DATE 쿼리 개발중.,..
+#사용방법
+# for i in df["USUBJID"].unique():
+#     PD_DATE(df ,i  , "OVRLRESP" ,"OVRLRESP_PD_DATE" ,  "TUDATE" ,"Analyst#1" )
+# def PD_DATE(  _dataframe , USUBJID ,  OVRLRESP_col , OVRLRESP_PD_DATE_col , Scandate , analyst):
+#     dataframe = _dataframe[(_dataframe["USUBJID"]==USUBJID) & (df["READER"]==analyst)]
+
+#     if "PD" in list(dataframe["OVRLRESP"].unique()):
+#         #PD처음 나왔을  때 Date -> 모든 것들의 기준
+#         standard_date = dataframe[dataframe[OVRLRESP_col]=="PD"].loc[ dataframe[dataframe[OVRLRESP_col]=="PD"].index[0] , Scandate]
+
+#         # 처음 PD 이후의 PD_Date
+#         FW_index = list(dataframe[dataframe[OVRLRESP_col]=="PD"].index[1:])
+#         FW_pd_date = [z for z in list(dataframe[dataframe[OVRLRESP_col]=="PD"].loc[ FW_index, OVRLRESP_PD_DATE_col]) if pd.notnull(z)]
+
+
+#         # pd_Date 가 2개 이상일때 부터 (  date , date)
+#         if len(set(FW_pd_date))>1:
+#             print(USUBJID , "error" , analyst , "pd_date가 1개가 아닌 여러개")
+        
+#         if len(FW_pd_date)>0:
+#             if FW_pd_date[0]!=standard_date:
+#                     print(USUBJID ,"error" , analyst , "날짜 오기재")   
+
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# Target Lesion 1~5 , NonTarget Lesion 1~5 , New Lesion 1~5 리젼 개수가 2개 이상이면 query
+# columns list = col_list = ["TRGOC_1","TRGOC_2" , "TRGOC_3" , "TRGOC_4" , "TRGOC_5" , "NTRGOC_1","NTRGOC_2" , "NTRGOC_3" , "NTRGOC_4" , "NTRGOC_5" ,"NEWLOC_1","NEWLOC_2" , "NEWLOC_3" , "NEWLOC_4" , "NEWLOC_5"]
+# 사용방법
+#for i in list(df["USUBJID"].unique()):
+    #for x in ["Analyst#1" , "Analyst#2"]:
+        #for z in col_list:
+           # Lesion_numcheck(i , x,z)
+
+def Lesion_numcheck(dataframe , USUBJID , analyst , columns  ):
+    unique = list(dataframe[(dataframe["USUBJID"]==USUBJID) & (dataframe["READER"]==analyst)][columns].unique())
+    #리젼값이 2개이상이면 문제가 있음 출력 , na값 제외
+    if len([xx for xx in unique if pd.notnull(xx)]) >1:
+        print(USUBJID ,analyst ,  columns)
+
+#----------------------------------------------------------------------------------------------------------------------------------
+
 # Modality와 Scan Type에 따라 Date가 잘 입력 되었는가     2022.10.25
 # -> SCAN TYPE의 Date가 잘못 기재된 경우
 # ex) CT SCAN , Chest 이면 Form 상단의 영상촬영일자의 CT-Chest Date와 동일해야 한다.

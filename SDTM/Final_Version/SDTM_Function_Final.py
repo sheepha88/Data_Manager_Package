@@ -715,21 +715,51 @@ class SDTM_RS(SDTM_TR):
     def __init__(self, dataframe, _READER, visit_dict , visit_group):
         super().__init__( dataframe , _READER, visit_dict  , visit_group)
 
-        #daframe 지정 - READER , Target Lesion Indicator
-        self.dataframe_copy = dataframe[(dataframe["READER"]==_READER) & (dataframe["TRIND"]=="Yes")].reset_index(drop=True).copy()
+        # #daframe 지정 - READER , Target Lesion Indicator
+        self.dataframe_copy = dataframe[(dataframe["READER"]==_READER) ].reset_index(drop=True).copy()
      
         #TU T Lesion 컬럼지정 TUEVALID = READER
         self.columns_list = ["USUBJID" , "VISIT" , "RSEVALID"  , "RSDTC", "RSACPTFL" , "RSORRES" ,  "RSSTRESC" ,"RSSTAT","RSREASND", "RSCOMM"  ]
 
+        #RSLNKGRP_mapping dict 에 Reader 값 추가하기 위해 재정의 ex) R2-A1
+        self.RSLNKGRP_mapping = visit_group
+        self.RSLNKGRP_mapping = dict(zip(self.RSLNKGRP_mapping.keys() , [_READER+"-"+i for i in self.RSLNKGRP_mapping.values()]))
 
-    def columns_cleansing(self):
-        return super().columns_cleansing()
+
+    #SDTM RS DOMATIN컬럼으로 정리하는 함수
+    #데코레이터 함수
+    def columns_cleansing(inputfunc):
+        def wrapper_function(*args, **kwargs):
+            #컬럼순서
+            final = inputfunc(*args, **kwargs)[[
+                            "DOMAIN"
+                            ,"USUBJID"
+                            ,"RSLNKGRP"
+                            ,"RSTESTCD"
+                            ,"RSTEST"
+                            ,"RSCAT"
+                            ,"RSORRES"
+                            ,"RSSTRESC"
+                            ,"RSSTAT"
+                            ,"RSREASND"
+                            ,"RSNAM"
+                            ,"RSEVAL"
+                            ,"RSEVALID"
+                            ,"RSCOMM"
+                            ,"RSACPTFL"
+                            ,"VISITNUM"
+                            ,"VISIT"
+                            ,"RSDTC"]].reset_index(drop=True)
+            
+            return final
+        return wrapper_function
 
 
 
     """Target Response"""
     @columns_cleansing
     def Target_Response(self):
+        # self.dataframe_copy = self.dataframe_copy[(self.dataframe_copy["TRIND"]=="Yes")].reset_index(drop=True).copy()
         #cnt = df_empty의 차례로 append하기 위해 -1부터 시작 그래야 첫번째때 0(-1+1)번째 행에 append 된다
         cnt = -1
         for i in range(len(self.dataframe_copy)):
@@ -766,31 +796,94 @@ class SDTM_RS(SDTM_TR):
         self.df_empty["RSTESTCD"] = "TRGRESP"
         self.df_empty["RSTEST"] = "Target Response"
         self.df_empty["RSCAT"] = "RECIST 1.1"
+     
 
+        return self.df_empty
+
+
+
+    """Non-Target Response"""
+    @columns_cleansing
+    def Non_Target_Response(self):
+        #cnt = df_empty의 차례로 append하기 위해 -1부터 시작 그래야 첫번째때 0(-1+1)번째 행에 append 된다
+        cnt = -1
+        for i in range(len(self.dataframe_copy)):
+            # Lesion이 Yes인 경우에만
+            if self.dataframe_copy.loc[i,"NTRIND"]=="Yes":
+                #cnt번째대로 각 컬럼값들 끌어온다
+                cnt+=1
+                self.df_empty.loc[cnt,self.columns_list] = [self.dataframe_copy.loc[i,"USUBJID"] ,
+                                                    self.dataframe_copy.loc[i,"VISIT"] ,
+                                                    self.dataframe_copy.loc[i,"READER"] , 
+                                                    self.dataframe_copy.loc[i,"RSDTC_NT"] , 
+                                                    self.dataframe_copy.loc[i,"TUACPTFL"],
+                                                    self.dataframe_copy.loc[i,"NTRGRESP_RS"],
+                                                    self.dataframe_copy.loc[i,"NTRGRESP_RS"],
+                                                    # Target Response가 NE면 Non done
+                                                    "NOT DONE" if self.dataframe_copy.loc[i,"NTRGRESP_RS"] is "NE" else np.nan,
+                                                    # Target Response NE 면 comment 기재
+                                                    self.dataframe_copy.loc[i,"NTRGRESP_CMT"] if self.dataframe_copy.loc[i,"NTRGRESP_RS"] is "NE" else np.nan,
+                                                    self.dataframe_copy.loc[i,"NTRGRESP_CMT"]
+                                                    ]
+
+        #null값 제외
+        self.df_empty = self.df_empty[self.df_empty["RSORRES"].notnull()]
         
 
-        # #컬럼순서
-        self.df_empty = self.df_empty[[
-                        "DOMAIN"
-                        ,"USUBJID"
-                        ,"RSLNKGRP"
-                        ,"RSTESTCD"
-                        ,"RSTEST"
-                        ,"RSCAT"
-                        ,"RSORRES"
-                        ,"RSSTRESC"
-                        ,"RSSTAT"
-                        ,"RSREASND"
-                        ,"RSNAM"
-                        ,"RSEVAL"
-                        ,"RSEVALID"
-                        ,"RSCOMM"
-                        ,"RSACPTFL"
-                        ,"VISITNUM"
-                        ,"VISIT"
-                        ,"RSDTC"
-                        ]].reset_index(drop=True)
+        #visit mapping
+        self.df_empty["VISITNUM"] = self.df_empty["VISIT"].map(self.visit_number)
+        self.df_empty["RSLNKGRP"] = np.nan
+        #default 값 채워주기
+        self.df_empty["DOMAIN"] = "RS"
+        self.df_empty["RSNAM"] = "Trial Informatics"
+        self.df_empty["RSEVAL"] = "INDEPENDENT ASSESSOR"
+        self.df_empty["RSTESTCD"] = "NTRGRESP"
+        self.df_empty["RSTEST"] = "Non-target Response"
+        self.df_empty["RSCAT"] = "RECIST 1.1"
+     
+
+        return self.df_empty
+
+
+    """Overall Response"""
+    @columns_cleansing
+    def Overall_Response(self):
+        #cnt = df_empty의 차례로 append하기 위해 -1부터 시작 그래야 첫번째때 0(-1+1)번째 행에 append 된다
+        cnt = -1
+        for i in range(len(self.dataframe_copy)):
+            # Lesion이 Yes인 경우에만
+            # if self.dataframe_copy.loc[i,"NTRIND"]=="Yes":
+                #cnt번째대로 각 컬럼값들 끌어온다
+            cnt+=1
+            self.df_empty.loc[cnt,self.columns_list] = [self.dataframe_copy.loc[i,"USUBJID"] ,
+                                        self.dataframe_copy.loc[i,"VISIT"] ,
+                                        self.dataframe_copy.loc[i,"READER"] , 
+                                        self.dataframe_copy.loc[i,"RSDTC_RS"] , 
+                                        self.dataframe_copy.loc[i,"TUACPTFL"],
+                                        self.dataframe_copy.loc[i,"OVRLRESP_RS"],
+                                        self.dataframe_copy.loc[i,"OVRLRESP_RS"],
+                                        # Target Response가 NE면 Non done
+                                        "NOT DONE" if self.dataframe_copy.loc[i,"OVRLRESP_RS"] is "NE" else np.nan,
+                                        # Target Response NE 면 comment 기재
+                                        self.dataframe_copy.loc[i,"OVRLRESP_CMT"] if self.dataframe_copy.loc[i,"OVRLRESP_RS"] is "NE" else np.nan,
+                                        self.dataframe_copy.loc[i,"OVRLRESP_CMT"]
+                                        ]
+
+        #null값 제외
+        self.df_empty = self.df_empty[self.df_empty["RSORRES"].notnull()]
         
+
+        #visit mapping
+        self.df_empty["VISITNUM"] = self.df_empty["VISIT"].map(self.visit_number)
+        self.df_empty["RSLNKGRP"] = self.df_empty["VISIT"].map(self.RSLNKGRP_mapping)
+        #default 값 채워주기
+        self.df_empty["DOMAIN"] = "RS"
+        self.df_empty["RSNAM"] = "Trial Informatics"
+        self.df_empty["RSEVAL"] = "INDEPENDENT ASSESSOR"
+        self.df_empty["RSTESTCD"] = "OVRLRESP"
+        self.df_empty["RSTEST"] = "Overall Response"
+        self.df_empty["RSCAT"] = "RECIST 1.1"
+     
 
         return self.df_empty
         
